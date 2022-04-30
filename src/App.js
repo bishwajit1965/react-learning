@@ -7,6 +7,7 @@ import NoPage from "./pages/NoPage";
 import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/ContactUs";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
