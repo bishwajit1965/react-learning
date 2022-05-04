@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import {
   Navbar,
   Button,
@@ -13,25 +13,11 @@ import {
 const Layout = () => {
   return (
     <>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/aboutUs">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contactUs">Contact Us</Link>
-          </li>
-          <li>
-            <Link to="/blogs">Blogs</Link>
-          </li>
-        </ul>
-      </nav> */}
       <Navbar bg="dark" expand="lg" class="text-white" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            React Learning
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -39,10 +25,18 @@ const Layout = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="blogs">Blogs</Nav.Link>
-              <Nav.Link href="contactUs">Contact Us</Nav.Link>
-              <Nav.Link href="aboutUs">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contactUs">
+                Contact Us
+              </Nav.Link>
+              <Nav.Link as={Link} to="/aboutUs">
+                About Us
+              </Nav.Link>
 
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
